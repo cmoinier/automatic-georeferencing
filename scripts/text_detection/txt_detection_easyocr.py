@@ -15,7 +15,7 @@ def normalize_text(text):
     return text
 
 # Charger la liste des communes
-with open("communes_clean.txt", "r", encoding="utf-8") as f:
+with open("/other_resources/communes_clean.txt", "r", encoding="utf-8") as f:
     communes = [line.strip() for line in f.readlines()]
 
 # Dictionnaire : clé normalisée -> valeur originale
@@ -34,7 +34,7 @@ def match_commune(text):
 
 # OCR
 reader = easyocr.Reader(['fr'])
-results = reader.readtext("/home/cmoinier/Documents/r&d_ORT/images_ORT/carte4.jpg")
+results = reader.readtext("/images_ORT/carte4.jpg")
 
 # Initialiser le géocodeur
 geolocator = Nominatim(user_agent="myApp")

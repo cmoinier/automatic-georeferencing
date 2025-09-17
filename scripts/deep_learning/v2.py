@@ -183,16 +183,16 @@ def main():
     city_graphs = generate_graphs_for_cities(cities)
 
     train_image_paths = [
-        "/home/cmoinier/Documents/r&d_ORT/generated_training_images/cherbourg.png",
-        "/home/cmoinier/Documents/r&d_ORT/generated_training_images/lyon.png",
-        "/home/cmoinier/Documents/r&d_ORT/generated_training_images/beaumont.png",
-        "/home/cmoinier/Documents/r&d_ORT/generated_training_images/lille.png",
-        "/home/cmoinier/Documents/r&d_ORT/generated_training_images/annecy.png",
-        "/home/cmoinier/Documents/r&d_ORT/generated_training_images/dijon.png",
-        "/home/cmoinier/Documents/r&d_ORT/generated_training_images/la_rochelle.png",
-        "/home/cmoinier/Documents/r&d_ORT/generated_training_images/paris.png",
-        "/home/cmoinier/Documents/r&d_ORT/generated_training_images/pessac.png",
-        "/home/cmoinier/Documents/r&d_ORT/generated_training_images/thionville.png",
+        "/generated_training_images/cherbourg.png",
+        "/generated_training_images/lyon.png",
+        "/generated_training_images/beaumont.png",
+        "/generated_training_images/lille.png",
+        "/generated_training_images/annecy.png",
+        "/generated_training_images/dijon.png",
+        "/generated_training_images/la_rochelle.png",
+        "/generated_training_images/paris.png",
+        "/generated_training_images/pessac.png",
+        "/generated_training_images/thionville.png",
     ]
     images = [Image.open(p).convert("RGB") for p in train_image_paths]
     dataset = RoadDataset(images, [city_graphs[c] for c in cities], augment=True)

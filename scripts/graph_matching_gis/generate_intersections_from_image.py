@@ -5,7 +5,7 @@ from shapely.geometry import LineString, mapping
 import geojson
 
 # --- 1. Charger l'image ---
-img = cv2.imread("/home/cmoinier/Documents/r&d_ORT/ort_la_hague.jpg")
+img = cv2.imread("/images_ORT/carte4.jpg")
 if img is None:
     raise FileNotFoundError("Image non trouvée ! Vérifie le chemin.")
 
@@ -13,11 +13,11 @@ gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 # --- 2. Binarisation ---
 _, binary = cv2.threshold(gray, 200, 255, cv2.THRESH_BINARY_INV)
-cv2.imwrite("/home/cmoinier/Documents/r&d_ORT/binary_hague.png", binary)
+cv2.imwrite("/binary_hague.png", binary)
 
 # --- 3. Skeletonisation ---
 skeleton = cv2.ximgproc.thinning(binary)
-cv2.imwrite("/home/cmoinier/Documents/r&d_ORT/skeleton_hague.png", skeleton)
+cv2.imwrite("/skeleton_hague.png", skeleton)
 
 # --- 4. Identifier les nœuds (extrémités et intersections) ---
 def get_neighbors(img, x, y):
@@ -81,7 +81,7 @@ features = []
 for u, v, data in G.edges(data=True):
     features.append(geojson.Feature(geometry=mapping(data["geometry"]), properties={}))
 
-with open("/home/cmoinier/Documents/r&d_ORT/graph_hague.geojson", "w") as f:
+with open("/graph_hague.geojson", "w") as f:
     geojson.dump(geojson.FeatureCollection(features), f)
 
 print("Graphe vectoriel exporté en graph.geojson ✅")

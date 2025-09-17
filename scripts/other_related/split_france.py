@@ -6,7 +6,7 @@ import math
 from shapely.geometry import shape
 
 # Charger le GeoJSON
-with fiona.open("/home/cmoinier/Documents/r&d_ORT/france_lines.geojson") as src:
+with fiona.open("france_lines.geojson") as src:
     roads = [feat["geometry"] for feat in src]
     bounds = src.bounds  # xmin, ymin, xmax, ymax
 
@@ -36,7 +36,7 @@ for i in range(nx_tiles):
         )
 
         # Sauvegarder la tuile
-        with rasterio.open(f"/home/cmoinier/Documents/r&d_ORT/tile_{i}_{j}.tif", "w",
+        with rasterio.open(f"/tiles/tile_{i}_{j}.tif", "w",
                            driver="GTiff", height=height, width=width,
                            count=1, dtype=tile_raster.dtype,
                            crs=src.crs, transform=transform) as dst:

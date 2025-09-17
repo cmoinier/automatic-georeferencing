@@ -173,27 +173,27 @@ def main():
     # 2️⃣ Images d'entraînement (10 par ville)
     image_paths = [
         # 10 Cherbourg
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/cherb1.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/cherb2.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/cherb3.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/cherb4.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/cherb5.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/cherb6.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/cherb7.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/cherb8.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/cherb9.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/cherb10.png",
+        "/lyon_cherb/cherb1.png",
+        "/lyon_cherb/cherb2.png",
+        "/lyon_cherb/cherb3.png",
+        "/lyon_cherb/cherb4.png",
+        "/lyon_cherb/cherb5.png",
+        "/lyon_cherb/cherb6.png",
+        "/lyon_cherb/cherb7.png",
+        "/lyon_cherb/cherb8.png",
+        "/lyon_cherb/cherb9.png",
+        "/lyon_cherb/cherb10.png",
         # 10 Lyon
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/lyon1.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/lyon2.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/lyon3.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/lyon4.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/lyon5.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/lyon6.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/lyon7.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/lyon8.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/lyon9.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/lyon10.png",
+        "/lyon_cherb/lyon1.png",
+        "/lyon_cherb/lyon2.png",
+        "/lyon_cherb/lyon3.png",
+        "/lyon_cherb/lyon4.png",
+        "/lyon_cherb/lyon5.png",
+        "/lyon_cherb/lyon6.png",
+        "/lyon_cherb/lyon7.png",
+        "/lyon_cherb/lyon8.png",
+        "/lyon_cherb/lyon9.png",
+        "/lyon_cherb/lyon10.png",
     ]
     images = [Image.open(p).convert("RGB") for p in image_paths]
 
@@ -211,7 +211,7 @@ def main():
     train_model(model_inter, dataset, save_path="model_intersections.pth", epochs=2)
 
     # 6️⃣ Test sur une image
-    test_img_path = "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/lyon1.png"
+    test_img_path = "/lyon_cherb//lyon1.png"
     test_img = Image.open(test_img_path).convert("RGB").resize((512,512))
     test_tensor = torch.tensor(np.array(test_img), dtype=torch.float32).permute(2,0,1).unsqueeze(0)/255.0
 

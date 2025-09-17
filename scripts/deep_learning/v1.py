@@ -195,7 +195,7 @@ def main():
 
     # ---- Images d'entraînement correspondantes ----
     # Liste des chemins vers les images satellites/plans
-    train_image_paths = ["/home/cmoinier/Documents/r&d_ORT/images_reference/cherbourg.png", "/home/cmoinier/Documents/r&d_ORT/images_reference/lyon.png"]
+    train_image_paths = ["/cherbourg.png", "/lyon.png"]
 
     # Charger les images avec PIL
     images = [Image.open(path).convert("RGB") for path in train_image_paths]

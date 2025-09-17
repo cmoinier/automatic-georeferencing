@@ -14,7 +14,7 @@ except ee.EEException:
 print("✅ GEE initialisé !")
 
 # --- 2. Récupérer la bounding box de la commune ---
-commune = "Beaumont-Hague, France"  # nom de la commune
+commune = "Caen, France"  # nom de la commune
 gdf = ox.geocode_to_gdf(commune)
 bbox = gdf.total_bounds
 print("Bounding box:", bbox)

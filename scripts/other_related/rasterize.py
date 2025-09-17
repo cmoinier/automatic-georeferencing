@@ -3,7 +3,7 @@ import rasterio
 from rasterio.features import rasterize
 
 # Charger le GeoJSON
-with fiona.open("/home/cmoinier/Documents/r&d_ORT/france_lines.geojson", "r") as src:
+with fiona.open("some_geojson_file.geojson", "r") as src:
     crs = src.crs
     bounds = src.bounds
     geometries = [feat["geometry"] for feat in src]
@@ -25,7 +25,7 @@ raster = rasterize(
 
 # Sauvegarde en GeoTIFF
 with rasterio.open(
-    "/home/cmoinier/Documents/r&d_ORT/france_routes.tif", "w",
+    "rasterized_routes.tif", "w",
     driver="GTiff",
     height=height, width=width,
     count=1, dtype=raster.dtype,

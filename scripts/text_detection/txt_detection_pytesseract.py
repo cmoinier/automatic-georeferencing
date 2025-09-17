@@ -6,11 +6,11 @@ from rapidfuzz import process
 import re
 
 # Charger la liste de communes
-with open("/home/cmoinier/Documents/r&d_ORT/communes_clean.txt", "r", encoding="utf-8") as f:
+with open("/other_resources/communes_clean.txt", "r", encoding="utf-8") as f:
     villes = [line.strip() for line in f if line.strip()]
 
 # 1. Prétraitement image
-img = cv2.imread("/home/cmoinier/Documents/r&d_ORT/images_ORT/carte4.jpg")
+img = cv2.imread("/images_ORT/carte4.jpg")
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 # Redimensionner

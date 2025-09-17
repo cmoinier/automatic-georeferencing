@@ -7,9 +7,9 @@ import os
 # ------------------------------
 # 1️⃣ Chemins
 # ------------------------------
-screenshot_path = "/home/cmoinier/Documents/r&d_ORT/ort_la_hague.jpg"
-sentinel_path = "/home/cmoinier/Documents/r&d_ORT/gee_download/sentinel2_rgb_Beaumont-Hague, France.tif"
-out_path = "/home/cmoinier/Documents/r&d_ORT/screenshot_aligne.tif"
+screenshot_path = "/images_ORT/carte1.png"
+sentinel_path = "path_to_sentinel_image.tif"
+out_path = "screenshot_aligne.tif"
 
 # ------------------------------
 # 2️⃣ Vérification du screenshot

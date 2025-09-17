@@ -173,28 +173,28 @@ def main():
 
     # Chemins vers les screenshots pour chaque ville (10 par ville)
     image_paths = [
-        # Cherbourg
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/cherb1.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/cherb2.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/cherb3.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/cherb4.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/cherb5.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/cherb6.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/cherb7.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/cherb8.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/cherb9.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/cherb10.png",
-        # Lyon
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/lyon1.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/lyon2.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/lyon3.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/lyon4.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/lyon5.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/lyon6.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/lyon7.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/lyon8.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/lyon9.png",
-        "/home/cmoinier/Documents/r&d_ORT/lyon_cherb/lyon10.png"
+        # 10 Cherbourg
+        "/lyon_cherb/cherb1.png",
+        "/lyon_cherb/cherb2.png",
+        "/lyon_cherb/cherb3.png",
+        "/lyon_cherb/cherb4.png",
+        "/lyon_cherb/cherb5.png",
+        "/lyon_cherb/cherb6.png",
+        "/lyon_cherb/cherb7.png",
+        "/lyon_cherb/cherb8.png",
+        "/lyon_cherb/cherb9.png",
+        "/lyon_cherb/cherb10.png",
+        # 10 Lyon
+        "/lyon_cherb/lyon1.png",
+        "/lyon_cherb/lyon2.png",
+        "/lyon_cherb/lyon3.png",
+        "/lyon_cherb/lyon4.png",
+        "/lyon_cherb/lyon5.png",
+        "/lyon_cherb/lyon6.png",
+        "/lyon_cherb/lyon7.png",
+        "/lyon_cherb/lyon8.png",
+        "/lyon_cherb/lyon9.png",
+        "/lyon_cherb/lyon10.png",
     ]
 
     # Dataset
@@ -205,7 +205,7 @@ def main():
     train_model(model_inter, dataset, save_path="model_intersections.pth", epochs=5)
 
     # Test sur une image inconnue
-    test_mask_path = "/home/cmoinier/Documents/r&d_ORT/generated_training_images/cherb_sat.png"
+    test_mask_path = "/cherb_sat.png"
     test_tensor = generate_skeleton_mask(test_mask_path).unsqueeze(0)  # [1,1,H,W]
 
     model_inter.eval()
